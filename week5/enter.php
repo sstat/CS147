@@ -28,10 +28,21 @@
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		
+	include("config.php");
+		$query = "select * from users where username = ' ".$_POST["username"]."' and password ' ".$_POST["password"]."' ";
+		$result = mysql_query($query);
+	      // This tells you how many rows were returned
+		$num_rows = mysql_num_rows($result);
+	
+		while ($row = mysql_fetch_assoc($result)) {
+			// You will get here is a table called sometable
+	// and a username test and password test exists. If it doesn’t exist
+	// you won’t land here.
+		} 
+	?>
 		<?php
 		// This is a hack. You should connect to a database here.
-		if ($_POST["username"] == "oi") {
+		if ($_POST["username"] == "test" && $_) {
 			?>
 			<script type="text/javascript">
 				// Save the username in local storage. That way you
